@@ -1,0 +1,56 @@
+{
+    "title": "Windows keys",
+    "rules": [
+        {
+            "description": "swap command with control for wine",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "left_command"
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_control"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^$"
+                            ],
+                            "file_paths": [
+                                "^/Applications/Wine Devel.app/Contents/Resources/wine/bin/wine-preloader",
+                                "^/Applications/Wine Devel.app/Contents/Resources/wine/bin/wine64-preloader"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "right_command"
+                    },
+                    "to": [
+                        {
+                            "key_code": "right_control"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^$"
+                            ],
+                            "file_paths": [
+                                "^/Applications/Wine Devel.app/Contents/Resources/wine/bin/wine-preloader",
+                                "^/Applications/Wine Devel.app/Contents/Resources/wine/bin/wine64-preloader"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
